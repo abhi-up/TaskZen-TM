@@ -6,13 +6,14 @@ import { Dialog } from "@headlessui/react"
 import Textbox from "./Textbox"
 import Loading from "./Loader"
 import Button from "./Button"
+import { useRegisterMutation } from "../redux/slices/api/authApiSlice"
+import { toast } from "sonner"
 
 const AddUser = ({ open, setOpen, userData }) => {
     let defaultValues = userData ?? {}
     const { user } = useSelector((state) => state.auth)
 
-    const isLoading = false,
-        isUpdating = false
+    const isUpdating = false
 
     const {
         register,
@@ -20,7 +21,27 @@ const AddUser = ({ open, setOpen, userData }) => {
         formState: { errors },
     } = useForm({ defaultValues })
 
-    const handleOnSubmit = () => {}
+    const [addNewUser, { isLoading }] = useRegisterMutation()
+
+    const handleOnSubmit = async (data) => {
+        try {
+            if (userData) {
+            } else {
+                const result = await addNewUser({
+                    ...data,
+                    password: data.email,
+                }).unwrap()
+
+                toast.success("New user added successfully.")
+            }
+
+            setTimeout(() => {
+                setOpen(false)
+            }, 1500)
+        } catch (error) {
+            toast.error("Something went wrong.")
+        }
+    }
 
     return (
         <>
