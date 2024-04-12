@@ -300,7 +300,7 @@ export const updateTask = async (req, res) => {
 
         res.status(200).json({
             status: true,
-            message: "Task duplicated successfully.",
+            message: "Task updated successfully.",
         })
     } catch (error) {
         console.log(error)
