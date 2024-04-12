@@ -11,7 +11,15 @@ export const taskApiSlice = apiSlice.injectEndpoints({
                 credentials: "include",
             }),
         }),
+
+        getAllTask: builder.query({
+            query: ({ strQuery, isTrashed, search }) => ({
+                url: `${TASKS_URL}?stage=${strQuery}&isTrashed=${isTrashed}&search=${search}`,
+                method: "GET",
+                credentials: "include",
+            }),
+        }),
     }),
 })
 
-export const { useGetDashboardStatsQuery } = taskApiSlice
+export const { useGetDashboardStatsQuery, useGetAllTaskQuery } = taskApiSlice
