@@ -214,7 +214,7 @@ const Dashboard = () => {
         )
     }
     return (
-        <div classNamee="h-full py-4">
+        <div className="h-full py-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
                 {stats.map(({ icon, bg, label, total }, index) => (
                     <Card
