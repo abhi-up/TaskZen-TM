@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from "react-redux"
 import { useLoginMutation } from "../redux/slices/api/authApiSlice"
 import { toast } from "sonner"
 
-import "react-toastify/dist/ReactToastify.css"
 import { setCredentials } from "../redux/slices/authSlice"
 import Loading from "../components/Loader"
 
