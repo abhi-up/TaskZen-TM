@@ -62,3 +62,21 @@ With the rise of remote work and dispersed teams, there is a growing need for to
 4. **Dashboard:**
     - Provide a summary of user activities.
     - Filter tasks into todo, in progress, or completed.
+
+
+## **Technologies Used:**
+- **Frontend:**
+    - React (Vite)
+    - Redux Toolkit for State Management
+    - Headless UI
+    - Tailwind CSS
+
+
+- **Backend:**
+    - Node.js with Express.js
+    
+- **Database:**
+    - MongoDB for efficient and scalable data storage.
+
+
+The Cloud-Based Task Manager is an innovative solution that brings efficiency and organization to task management within teams. By harnessing the power of the MERN stack and modern frontend technologies, the platform provides a seamless experience for both administrators and users, fostering collaboration and productivity.
